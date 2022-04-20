@@ -4,12 +4,17 @@ import java.util.Scanner;
 
 public class Orders {
 
+    private boolean systemRunnig = true;
     private int customerPhoneNumber;
     private String customerName;
     private int customer;
     private Scanner in = new Scanner(System.in);
 
-    void numbOfOrder(){
+    public boolean isSystemRunnig() {
+        return this.systemRunnig;
+    }
+
+    void numbOfOrder(){ //TODO kan bruges, men er ikke en prioritet. (bruges til hvis der er mere end 1 pizza)
         System.out.print("How many orders would you like to order? ");
         customer = in.nextInt();
     }
