@@ -22,9 +22,7 @@ public class Runn {
         }
         if (!orders.isSystemRunnig()){
             ui.exit();
-        } else if (running){
-            ui.exit();
-        }else
+        } else
             ui.exit();
     }
 
