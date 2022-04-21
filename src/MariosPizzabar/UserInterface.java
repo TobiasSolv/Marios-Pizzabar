@@ -78,7 +78,8 @@ public class UserInterface {
         System.out.print("""
         
         Main menu:
-        Start [start]
+        order [order]
+        remove order [remove order]
         Exit [exit]
         """);
 

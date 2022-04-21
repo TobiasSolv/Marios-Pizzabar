@@ -9,6 +9,7 @@ public class Runn {
     MenuKort mk = new MenuKort();
     Orders orders = new Orders();
     UserInterface ui = new UserInterface();
+    private ArrayList<Orders> order = new ArrayList<>();
 
     void run(){
         ui.start();
@@ -18,7 +19,8 @@ public class Runn {
         mainMenu();
 
         while (running){
-            customerDecisionSwitch();
+            customerDecisionSwitchAdd();
+            customerDecisionSwitchRemove();
         }
         if (!orders.isSystemRunnig()){
             ui.exit();
@@ -29,7 +31,8 @@ public class Runn {
     void mainMenu() {
         ui.getCommand();
         switch (ui.getDecision()) {
-            case "start", "s" -> orders.order();
+            case "order", "o" -> orders.order();
+            case "remove order", "ro" -> orders.removeOrder();
             case "exit", "e" -> {
                 ui.exit();
                 running = false;
@@ -43,14 +46,29 @@ public class Runn {
         }
     }
 
-    void customerDecisionSwitch(){
+    void customerDecisionSwitchAdd(){
         //orders.order();
         switch (orders.getCustomer()){
-            case 1 -> System.out.println("test"); //TODO skal kunne vælge hvad for nogle pizzaer, der bliver ordre.
+            case 1 -> order.add();
+
+
+
+
+
             case 0 ->{ // TODO skal muligvis stå et andet sted.
                 ui.exit();
                 running = false;
             }
+            default -> ui.invalidAnswer();
+        }
+    }
+
+    void customerDecisionSwitchRemove(){
+        switch (orders.getCustomer()){
+            case 1 -> order.remove();
+
+
+
             default -> ui.invalidAnswer();
         }
     }

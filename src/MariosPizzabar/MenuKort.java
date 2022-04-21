@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class MenuKort {
 
     private ArrayList<Pizza> menu = new ArrayList<>();
+    private ArrayList<Pizza> orders = new ArrayList<>();
 
     public MenuKort(){
-        Pizza p = new Pizza(1,57,"Vesuvio:","tomatsauce, ost, skinke og oregano...........................................");
-        menu.add(p);
+        menu.add(new Pizza(1,57,"Vesuvio:","tomatsauce, ost, skinke og oregano..........................................."));
         menu.add(new Pizza(2,53,"Amerikaner:","Nyhed tomatsauce, ost, oksefars og oregano................................"));
         menu.add(new Pizza(3,57,"Cacciatore:","tomatsauce, ost, pepperoni og oregano....................................."));
         menu.add(new Pizza(4,63,"Carbona:","Nyhed tomatsauce, ost, kødsauce, spaghetti, cocktailpølser og oregano........"));

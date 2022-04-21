@@ -1,5 +1,6 @@
 package MariosPizzabar;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Orders {
@@ -9,6 +10,7 @@ public class Orders {
     private String customerName;
     private int customer;
     private Scanner in = new Scanner(System.in);
+
 
     public boolean isSystemRunnig() {
         return this.systemRunnig;
@@ -21,6 +23,11 @@ public class Orders {
 
     void order(){
         System.out.println("What would you like to order? ");
+        customer = in.nextInt();
+    }
+
+    void removeOrder(){
+        System.out.println("What would you like to remove? ");
         customer = in.nextInt();
     }
 
@@ -39,4 +46,6 @@ public class Orders {
         customerPhoneNumber = in.nextInt();
 
     }
+
+
 }
