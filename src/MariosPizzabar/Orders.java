@@ -1,38 +1,43 @@
 package MariosPizzabar;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Orders {
 
-    private boolean systemRunnig = true;
     private int customerPhoneNumber;
     private String customerName;
-    private int customer;
+    private int customerNr;
+    private Pizza chosenPizza;
+
     private Scanner in = new Scanner(System.in);
+    MenuKort mk = new MenuKort();
 
-
-    public boolean isSystemRunnig() {
-        return this.systemRunnig;
+    public Orders(int customerPhoneNumber,String customerName, int customerNr, Pizza chosenPizza){
+        this.customerPhoneNumber=customerPhoneNumber;
+        this.customerName=customerName;
+        this.customerNr=customerNr;
+        this.chosenPizza=chosenPizza;
     }
+
+
 
     void numbOfOrder(){ //TODO kan bruges, men er ikke en prioritet. (bruges til hvis der er mere end 1 pizza)
         System.out.print("How many orders would you like to order? ");
-        customer = in.nextInt();
+        customerNr = in.nextInt();
     }
 
     void order(){
         System.out.println("What would you like to order? ");
-        customer = in.nextInt();
+        customerNr = in.nextInt();
     }
 
     void removeOrder(){
         System.out.println("What would you like to remove? ");
-        customer = in.nextInt();
+        customerNr = in.nextInt();
     }
 
-    public int getCustomer(){
-        return customer;
+    public int getCustomerNr(){
+        return customerNr;
     }
 
     void customerName(){
@@ -46,6 +51,8 @@ public class Orders {
         customerPhoneNumber = in.nextInt();
 
     }
-
+    public String toString(){
+        return customerNr + " " + customerPhoneNumber + " " + customerName + " " + chosenPizza;
+    }
 
 }
