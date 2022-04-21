@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class MenuKort {
 
     private ArrayList<Pizza> menu = new ArrayList<>();
-    private ArrayList<Pizza> orders = new ArrayList<>();
 
     public MenuKort(){
         menu.add(new Pizza(1,57,"Vesuvio:","tomatsauce, ost, skinke og oregano..........................................."));
