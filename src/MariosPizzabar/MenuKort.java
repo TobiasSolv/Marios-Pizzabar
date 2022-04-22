@@ -16,7 +16,7 @@ public class MenuKort {
         menu.add(new Pizza(6,61,"Silvia:","tomatsauce, ost pepperoni, rød peber, løg, oliven og oregano.................."));
         menu.add(new Pizza(7,61,"Victoria:","tomatsauce, ost skinke, ananas, champignon, løg og oregano.................."));
         menu.add(new Pizza(8,61,"Toronfo:","Nyhed tomatsauce, ost,skinke, bacon, kebab, chili og oregano................."));
-        menu.add(new Pizza(9,61,"Capricciosa:","tomatsauce, ost, skinke, champignon og oregano.........................."));
+        menu.add(new Pizza(9,61,"Capricciosa:","tomatsauce, ost, skinke, champignon og oregano..........................."));
         menu.add(new Pizza(10,61,"Hawai:","tomatsauce, ost,skinke, ananas, oregano......................................."));
         menu.add(new Pizza(11,61,"Le Blissola:","tomatsauce, ost,skinke, rejer og oregano................................"));
         menu.add(new Pizza(12,61,"Venezia:","tomatsauce, ost skinke, bacon og oregano...................................."));

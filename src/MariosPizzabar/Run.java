@@ -97,7 +97,10 @@ public class Run {
         System.out.print("What pizza does the customer want: ");
         int pizzaNumber = in.nextInt();
 
-        orders.add(new Orders(phoneNumber,name,nr,mk.getmenuKort().get(pizzaNumber)));
+        System.out.print("When does the customer want the pizza: ");
+        double pizzaTime = in.nextDouble();
+
+        orders.add(new Orders(phoneNumber,name,nr,mk.getmenuKort().get(pizzaNumber),pizzaTime));
     }
 
     void removeOrder(){
