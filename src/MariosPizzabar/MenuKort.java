@@ -24,7 +24,7 @@ public class MenuKort {
 
     }
 
-    ArrayList<Pizza> getmenuKort(){
+    ArrayList<Pizza> getMenuKort(){
         return menu;
     }
 

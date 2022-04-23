@@ -20,18 +20,18 @@ public class Run {
     }
 
     void showOrders(){
-        System.out.println(orders);
+        String printOrders = orders.toString().replace("[","").replace("]","");
+        System.out.print(printOrders);
+
     }
 
     void run(){
         ui.start();
-        ArrayList<Pizza> menuKort = mk.getmenuKort();
+        ArrayList<Pizza> menuKort = mk.getMenuKort();
         ui.showMenuKort(menuKort);
         ui.printMain();
         mainMenu();
 
-        while (running){
-        }
         if (!isSystemRunning()){
             ui.exit();
         } else
@@ -78,10 +78,27 @@ public class Run {
 
     void moreOrder(){
         System.out.print("\nWould you like to order more? \n");
+        String ScannerBug = in.nextLine();
         String answer = in.nextLine();
-        if(answer.equals("yes")){
-            newOrder();
+        if(answer.equals("yes")) {
+            System.out.println("How many pizzas do you wanna add?");
+            int numberOfPizzas = in.nextInt();
+            for (int i = 0; i < numberOfPizzas; i++)
+            addMorePizzas();
         }
+        showOrders();
+    }
+
+    void addMorePizzas(){
+        System.out.println("Which customer wants to add more pizzas?");
+        int customerNr = in.nextInt();
+
+        System.out.print("What pizza does the customer want: ");
+        int pizzaChoice = in.nextInt();
+
+        orders.get(customerNr).getChosenPizza().add(mk.getMenuKort().get(pizzaChoice));
+
+        String ScannerBug = in.nextLine();
     }
 
     void newOrder(){
@@ -94,13 +111,13 @@ public class Run {
         System.out.print("What is the customers phone number: ");
         int phoneNumber = in.nextInt();
 
-        System.out.print("What pizza does the customer want: ");
-        int pizzaNumber = in.nextInt();
-
         System.out.print("When does the customer want the pizza: ");
         double pizzaTime = in.nextDouble();
 
-        orders.add(new Orders(phoneNumber,name,nr,mk.getmenuKort().get(pizzaNumber),pizzaTime));
+        System.out.print("What pizza does the customer want: ");
+        int pizzaNumber = in.nextInt();
+
+        orders.add(new Orders(phoneNumber,name,nr,pizzaTime,mk.getMenuKort().get(pizzaNumber)));
     }
 
     void removeOrder(){

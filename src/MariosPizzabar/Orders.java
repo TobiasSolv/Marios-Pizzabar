@@ -1,32 +1,32 @@
 package MariosPizzabar;
 
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Orders {
 
     private int customerPhoneNumber;
     private String customerName;
     private int customerNr;
-    private Pizza chosenPizza;
+    private ArrayList<Pizza> chosenPizza;
     private double pizzaTime;
 
-    private Scanner in = new Scanner(System.in);
 
-    public Orders(int customerPhoneNumber, String customerName, int customerNr, Pizza chosenPizza, double pizzaTime){
+    public Orders(int customerPhoneNumber, String customerName, int customerNr,  double pizzaTime, Pizza pizza){
         this.customerPhoneNumber = customerPhoneNumber;
         this.customerName = customerName;
         this.customerNr = customerNr;
-        this.chosenPizza = chosenPizza;
         this.pizzaTime = pizzaTime;
+        chosenPizza = new ArrayList<>();
+        chosenPizza.add(pizza);
     }
 
-    public int getCustomerNr(){
-        return customerNr;
+    public ArrayList<Pizza> getChosenPizza() {
+        return chosenPizza;
     }
 
     public String toString(){
         return "\nCustomer number: " + customerNr + "\ncustomer phone number: " + customerPhoneNumber +
-                "\nCustomer name: " + customerName + "\nChosen pizza: " + chosenPizza + "\nTime for delivery: " + pizzaTime + "\n";
+                "\nCustomer name: " + customerName + "\nTime for delivery: " + pizzaTime + "\nChosen pizza: " + chosenPizza;
     }
 
 }
