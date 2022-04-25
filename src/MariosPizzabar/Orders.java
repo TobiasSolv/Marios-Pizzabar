@@ -2,7 +2,7 @@ package MariosPizzabar;
 
 import java.util.ArrayList;
 
-public class Orders {
+public class Orders implements Comparable {
 
     private int customerPhoneNumber;
     private String customerName;
@@ -24,9 +24,19 @@ public class Orders {
         return chosenPizza;
     }
 
+    public double getPizzaTime() {
+        return pizzaTime;
+    }
+
     public String toString(){
         return "\nCustomer number: " + customerNr + "\ncustomer phone number: " + customerPhoneNumber +
                 "\nCustomer name: " + customerName + "\nTime for delivery: " + pizzaTime + "\nChosen pizza: " + chosenPizza;
     }
 
+
+    @Override
+    public int compareTo(Object compare) {
+        double compareTime = ((Orders)compare).getPizzaTime();
+        return (int) (this.pizzaTime-compareTime);
+    }
 }

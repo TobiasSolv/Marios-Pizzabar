@@ -2,6 +2,7 @@ package MariosPizzabar;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Run {
@@ -20,9 +21,12 @@ public class Run {
     }
 
     void showOrders(){
-        String printOrders = order.toString().replace("[","").replace("]","");
-        System.out.print(printOrders);
+        Collections.sort(order);
+        for(Orders str: order){
+            String printOrders = str.toString().replace("[","").replace("]","");
 
+            System.out.println(printOrders);
+        }
     }
 
     void run(){
