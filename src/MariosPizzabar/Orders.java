@@ -24,10 +24,6 @@ public class Orders {
         return chosenPizza;
     }
 
-    public double getPizzaTime() {
-        return pizzaTime;
-    }
-
     public String toString(){
         return "\nCustomer number: " + customerNr + "\ncustomer phone number: " + customerPhoneNumber +
                 "\nCustomer name: " + customerName + "\nTime for delivery: " + pizzaTime + "\nChosen pizza: " + chosenPizza;

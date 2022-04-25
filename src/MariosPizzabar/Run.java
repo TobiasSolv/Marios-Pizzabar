@@ -21,22 +21,8 @@ public class Run {
 
     void showOrders(){
         String printOrders = order.toString().replace("[","").replace("]","");
-        //System.out.print(printOrders);
+        System.out.print(printOrders);
 
-            int size = order.size();
-            for(int i = 1; i < size; i++){
-                int j;
-                for(j = 0; j < size; j++)  {
-                    if(order.get(i).getPizzaTime() < order.get(j).getPizzaTime()){
-                        System.out.println(order.get(i));
-                        System.out.println(order.get(j));
-                    }
-                    else if(order.get(j).getPizzaTime() < order.get(i).getPizzaTime()){
-                        System.out.println(order.get(j));
-                        System.out.println(order.get(i));
-                    }
-                }
-            }
     }
 
     void run(){
