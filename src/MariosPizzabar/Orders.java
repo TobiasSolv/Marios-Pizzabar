@@ -16,12 +16,16 @@ public class Orders {
         this.customerName = customerName;
         this.customerNr = customerNr;
         this.pizzaTime = pizzaTime;
-        chosenPizza = new ArrayList<>();
+        this.chosenPizza = new ArrayList<>();
         chosenPizza.add(pizza);
     }
 
     public ArrayList<Pizza> getChosenPizza() {
         return chosenPizza;
+    }
+
+    public double getPizzaTime() {
+        return pizzaTime;
     }
 
     public String toString(){

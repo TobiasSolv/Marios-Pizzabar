@@ -10,7 +10,7 @@ public class Run {
 
     private Scanner in = new Scanner(System.in);
 
-    ArrayList<Orders> orders = new ArrayList<>();
+    ArrayList<Orders> order = new ArrayList<>();
 
     MenuKort mk = new MenuKort();
     UserInterface ui = new UserInterface();
@@ -20,9 +20,23 @@ public class Run {
     }
 
     void showOrders(){
-        String printOrders = orders.toString().replace("[","").replace("]","");
-        System.out.print(printOrders);
+        String printOrders = order.toString().replace("[","").replace("]","");
+        //System.out.print(printOrders);
 
+            int size = order.size();
+            for(int i = 1; i < size; i++){
+                int j;
+                for(j = 0; j < size; j++)  {
+                    if(order.get(i).getPizzaTime() < order.get(j).getPizzaTime()){
+                        System.out.println(order.get(i));
+                        System.out.println(order.get(j));
+                    }
+                    else if(order.get(j).getPizzaTime() < order.get(i).getPizzaTime()){
+                        System.out.println(order.get(j));
+                        System.out.println(order.get(i));
+                    }
+                }
+            }
     }
 
     void run(){
@@ -96,7 +110,7 @@ public class Run {
         System.out.print("What pizza does the customer want: ");
         int pizzaChoice = in.nextInt();
 
-        orders.get(customerNr).getChosenPizza().add(mk.getMenuKort().get(pizzaChoice));
+        order.get(customerNr).getChosenPizza().add(mk.getMenuKort().get(pizzaChoice));
 
         String ScannerBug = in.nextLine();
     }
@@ -117,12 +131,12 @@ public class Run {
         System.out.print("What pizza does the customer want: ");
         int pizzaNumber = in.nextInt();
 
-        orders.add(new Orders(phoneNumber,name,nr,pizzaTime,mk.getMenuKort().get(pizzaNumber)));
+        order.add(new Orders(phoneNumber,name,nr,pizzaTime,mk.getMenuKort().get(pizzaNumber)));
     }
 
     void removeOrder(){
         System.out.print("What order would you like to remove? ");
         int nr = in.nextInt();
-        orders.remove(nr);
+        order.remove(nr);
     }
 }

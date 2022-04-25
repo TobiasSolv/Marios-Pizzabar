@@ -59,7 +59,7 @@ public class UserInterface {
         Main menu:
         Make order [make order]
         Remove order [remove order]
-        Show order [show order]
+        Show order [show orders]
         Exit [exit]
         """);
 
