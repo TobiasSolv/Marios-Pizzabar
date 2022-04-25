@@ -16,7 +16,7 @@ public class Orders {
         this.customerName = customerName;
         this.customerNr = customerNr;
         this.pizzaTime = pizzaTime;
-        this.chosenPizza = new ArrayList<>();
+        this.chosenPizza = new ArrayList<Pizza>();
         chosenPizza.add(pizza);
     }
 
