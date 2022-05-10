@@ -22,11 +22,16 @@ public class Run {
 
     void showOrders(){
         Collections.sort(order);
-        for(Orders str: order){
-            String printOrders = str.toString().replace("[","").replace("]","");
+        for(int i= 0; i < order.size(); i++){
+            String printOrders = order.get(i).toString().replace("[","").replace("]","");
 
             System.out.println(printOrders);
         }
+        //for(Orders str: order){
+        //    String printOrders = str.toString().replace("[","").replace("]","");
+
+        //    System.out.println(printOrders);
+        //}
     }
 
     void run(){
